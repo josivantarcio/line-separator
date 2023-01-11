@@ -8,10 +8,13 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+import javax.swing.JOptionPane;
+
 import entidades.Idioma;
 
 public class ProcessamentoTextos extends Thread {
 
+	
 	private ConcurrentLinkedQueue<Idioma> idiomas = new ConcurrentLinkedQueue<>();
 
 	public void adicionarLinhas(Idioma idioma) {
@@ -20,10 +23,11 @@ public class ProcessamentoTextos extends Thread {
 
 	@Override
 	public void run() {
-		System.out.println("Aguarde...");
+		
 		boolean process = true;
 		while (process) {
 			Iterator iteracao = idiomas.iterator();
+			
 			/* Leitura do arquivo */
 
 			synchronized (iteracao) {
@@ -34,7 +38,7 @@ public class ProcessamentoTextos extends Thread {
 
 					try {
 						Scanner scan = new Scanner(entrada);
-
+			
 						int i = 0;
 						String texto = scan.nextLine() + "\n";
 
@@ -62,7 +66,6 @@ public class ProcessamentoTextos extends Thread {
 						}
 						e.printStackTrace();
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 
@@ -72,15 +75,17 @@ public class ProcessamentoTextos extends Thread {
 						escrever.write(idioma.getEnglish() + "\n");
 						escrever.flush();
 						escrever.close();
-						System.out.println("FIM");
+		
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 
 					process = false;
 				}
 			}
+		}
+		if(process == false) {
+			JOptionPane.showMessageDialog(null, "Finished");
 		}
 	}
 }

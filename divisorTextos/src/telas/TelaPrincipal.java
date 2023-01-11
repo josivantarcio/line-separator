@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -78,9 +79,10 @@ public class TelaPrincipal extends JDialog {
 				processador.adicionarLinhas(caminhoIdioma);
 
 				if (caminhoIdioma.getCaminhoEntrada().equals(caminhoIdioma.getCaminhoSaida())) {
-					System.out.println("Erro! Não é permitido alterar o arquivo de origem");
+					JOptionPane.showMessageDialog(null, " Error! Not allowed to change the source file ");
 					processador.stop();
 				}else {
+					JOptionPane.showMessageDialog(null, "Wait, please!");
 					setVisible(false);
 				}
 
