@@ -1,31 +1,44 @@
 # Idioma Class
 
-This repository contains the `Idioma` class, which represents language settings with properties for English and Portuguese translations, as well as file input and output paths.
+![Java](https://img.shields.io/badge/Java-8-red)
+![GitHub](https://img.shields.io/badge/GitHub-josivantarcio%2Fline--separator-lightgrey)
 
-## Class Overview
+## Overview
 
-The `Idioma` class provides the following properties:
+The `Idioma` class represents language settings with properties for English and Portuguese translations, along with file input and output paths. It facilitates language handling and file management within Java applications.
 
-- `english`: Represents the English language text.
-- `portugues`: Represents the Portuguese language text.
-- `caminhoEntrada`: Specifies the input file path.
-- `caminhoSaida`: Specifies the output file path.
+## Functionalities
 
-## Methods
+- **Language Texts**: Stores and retrieves translations for English and Portuguese texts.
+- **File Paths**: Manages paths for input (`caminhoEntrada`) and output (`caminhoSaida`) files.
+- **Equality and Hashing**: Implements `equals()` and `hashCode()` methods for comparing objects based on all properties.
 
-- `getEnglish()`: Retrieves the English language text.
-- `setEnglish(String english)`: Sets the English language text.
-- `getPortugues()`: Retrieves the Portuguese language text.
-- `setPortugues(String portugues)`: Sets the Portuguese language text.
-- `getCaminhoEntrada()`: Retrieves the input file path.
-- `setCaminhoEntrada(String caminhoEntrada)`: Sets the input file path.
-- `getCaminhoSaida()`: Retrieves the output file path.
-- `setCaminhoSaida(String caminhoSaida)`: Sets the output file path.
-- `hashCode()`: Computes the hash code based on all properties.
-- `equals(Object obj)`: Checks equality based on all properties.
+## Properties
+
+- `english`: Stores English language text.
+- `portugues`: Stores Portuguese language text.
+- `caminhoEntrada`: Path for input files.
+- `caminhoSaida`: Path for output files.
 
 ## Usage
 
-This class can be used to manage language settings and file paths within a Java application.
+### Example:
 
-For more details, please refer to the [Idioma.java](https://github.com/josivantarcio/line-separator/blob/main/src/main/java/entidades/Idioma.java) file.
+```java
+Idioma idioma = new Idioma();
+idioma.setEnglish("Hello");
+idioma.setPortugues("Olá");
+idioma.setCaminhoEntrada("/path/to/input.txt");
+idioma.setCaminhoSaida("/path/to/output.txt");
+
+System.out.println("English: " + idioma.getEnglish());
+System.out.println("Portuguese: " + idioma.getPortugues());
+System.out.println("Input Path: " + idioma.getCaminhoEntrada());
+System.out.println("Output Path: " + idioma.getCaminhoSaida());
+```
+
+## Contact
+
+For questions or feedback, please contact:
+
+- **Jôsevan Tárcio Silva de Oliveira**
